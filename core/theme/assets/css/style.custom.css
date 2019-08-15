@@ -1,0 +1,282 @@
+@font-face{
+    font-family: "Helvetica-Bold";
+    src: url('../fonts/HelveticaNeue/HelveticaNeueW23-Bd.woff');
+}
+
+@font-face{
+    font-family:"Helvetica-Reg";
+    src: url('../fonts/HelveticaNeue/HelveticaNeueW23-Reg.woff');
+}
+
+.hb{
+    font-family: 'Helvetica-Bold', sans-serif;
+}
+
+.hr, body, label, input, p, span, div{
+    font-family: 'Helvetica-Reg', sans-serif;
+}
+
+label{
+    color: gray;
+}
+
+.title-size{
+    font-size: 22px;
+}
+
+.search-size{
+    font-size: 28px;
+}
+
+.med-size{
+    font-size: 19px;
+}
+
+.button-size{
+    font-size: 16px;
+}
+
+.button-size-1{
+    font-size: 14px;
+}
+
+#preloader{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:#fff;
+    z-index:999999;
+}
+
+.rtl{
+    text-align: right;
+    direction: rtl;
+}
+
+.ltr{
+    text-align: left;
+    direction: ltr;
+}
+
+.center{
+    text-align: center;
+}
+
+.left{
+    text-align: left;
+}
+
+.blc{
+    color: black;
+}
+
+.table-bordered{
+    text-align: right;
+    direction: rtl;
+    font-family: 'Helvetica-Reg', sans-serif;
+    font-size: 17px;
+}
+
+a:hover{
+    cursor: pointer;
+}
+
+.card{
+    font-size: 20px;
+    padding: 15px 25px 15px 25px;
+}
+
+.badge-danger{
+    background-color: #ff2222;
+}
+
+.table th, .jsgrid .jsgrid-table th,
+.table td, .jsgrid .jsgrid-table td {
+  padding: 1rem 0.6rem;
+  vertical-align: center;
+  border-top: 1px solid #e9e8ef;
+}
+
+.form-group label{
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+.form-group select{
+    margin-top: -12px;
+    margin-bottom: 0px;
+    padding-top: 6px;
+    padding-bottom: 10px;
+    color: #aaa;
+}
+
+.form-group input{
+    margin-top: -12px;
+    margin-bottom: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.pagination .disabled:not(.active):hover .page-link{
+    background-color: white;
+    color: black;
+}
+
+/*.navbar .navbar-menu-wrapper {
+    height: 50px;
+}*/
+
+.page-body-wrapper {
+    padding-top: 0;
+}
+
+.content-wrapper {
+    padding: 2rem 2rem;
+}
+
+.footer{
+    padding: 15px 30px;
+}
+
+.footer a{
+    color: #9b9b9b;
+}
+
+.invoiceBG{
+    background-color: #e8daef;/*#BFECF3;*/
+}
+
+.img {
+    width: 500px;
+    font-size:50px;
+    /*border-radius:15px;*/
+    margin-top:25px;
+    margin-bottom:25px;
+    -webkit-box-shadow: 0px 0px 15px 3px #bbb;
+    -moz-box-shadow: 0px 0px 15px 3px #bbb;
+    box-shadow: 0px 0px 15px 3px #bbb;
+}
+
+.h40{
+    height: 40px;
+}
+
+.card {
+    padding: 25px;
+}
+
+.card-body {
+    padding: 0;
+}
+
+.card-inverse-success, .card-inverse-danger{
+    font-size: 14px;
+    padding: 15px 25px;
+}
+
+.ltrTextArea{
+    height: 250px;
+    line-height: 20px;
+    text-align: left;
+    direction: ltr;
+}
+
+.sidebar{
+    background: #005b99;
+}
+
+.sidebar .nav .nav-item .nav-link i.menu-icon {
+    color: white;
+}
+
+.btn-primary, .wizard > .actions a {
+    background-color: #d22630;
+    border-color: #8e252c;
+}
+
+.btn-primary:hover, .wizard > .actions a:hover {
+    background-color: #8e252c;
+}
+
+.btn-primary:focus, .wizard > .actions a:focus, .btn-primary.focus, .wizard > .actions a.focus {
+  box-shadow: 0 0 0 0.2rem #8e252c;
+}
+
+.btn-primary.disabled, .wizard > .actions a.disabled, .btn-primary:disabled, .wizard > .actions a:disabled {
+  background-color: #8e252c;
+  border-color: #8e252c;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active, .wizard > .actions a:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .wizard > .actions a:not(:disabled):not(.disabled).active,
+.show > .btn-primary.dropdown-toggle, .wizard > .actions
+.show > a.dropdown-toggle {
+  background-color: #8e252c;
+  border-color: #8e252c;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active:focus, .wizard > .actions a:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus, .wizard > .actions a:not(:disabled):not(.disabled).active:focus,
+.show > .btn-primary.dropdown-toggle:focus, .wizard > .actions
+.show > a.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem #8e252c;
+}
+
+.btn-secondary, .wizard > .actions .disabled a {
+  color: #212529;
+  background-color: #d9dbdc;
+  border-color: #d9dbdc;
+}
+
+.btn-secondary:hover, .wizard > .actions .disabled a:hover {
+  color: #212529;
+  background-color: #c5c8ca;
+  border-color: #bec2c4;
+}
+
+.btn-secondary:focus, .wizard > .actions .disabled a:focus, .btn-secondary.focus, .wizard > .actions .disabled a.focus {
+  box-shadow: 0 0 0 0.2rem #8e252c;
+}
+
+.btn-secondary.disabled, .wizard > .actions .disabled a.disabled, .btn-secondary:disabled, .wizard > .actions .disabled a:disabled {
+  color: #212529;
+  background-color: #d9dbdc;
+  border-color: #d9dbdc;
+}
+
+.btn-secondary:not(:disabled):not(.disabled):active, .wizard > .actions .disabled a:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active, .wizard > .actions .disabled a:not(:disabled):not(.disabled).active,
+.show > .btn-secondary.dropdown-toggle, .wizard > .actions .disabled
+.show > a.dropdown-toggle {
+  color: #212529;
+  background-color: #bec2c4;
+  border-color: #b8bcbd;
+}
+
+.btn-secondary:not(:disabled):not(.disabled):active:focus, .wizard > .actions .disabled a:not(:disabled):not(.disabled):active:focus, .btn-secondary:not(:disabled):not(.disabled).active:focus, .wizard > .actions .disabled a:not(:disabled):not(.disabled).active:focus,
+.show > .btn-secondary.dropdown-toggle:focus, .wizard > .actions .disabled
+.show > a.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(217, 219, 220, 0.5);
+}
+
+.page-body-wrapper {
+  min-height: calc(100vh - 50px);
+}
+
+.navbar .navbar-menu-wrapper {
+  height: 50px;
+}
+
+.sidebar-icon-only .sidebar .nav .nav-item.hover-open .nav-link:hover .menu-title {
+    background: #d22630;
+    color: white;
+}
+
+.sidebar .nav:not(.sub-menu) > .nav-item:hover > .nav-link {
+  background: #d22630;
+    color: white;
+}
+
+.sidebar-icon-only .sidebar .nav .nav-item.hover-open .nav-link .menu-title {
+    background: #d22630;
+    color: white;
+}
