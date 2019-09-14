@@ -40,9 +40,22 @@
                             <tbody>
 
     <?php
+        $courses_types = array();
+        if($core->userHaveRole('COURSE01')){
+            array_push($courses_types, 'COURSE01');
+        }
+        if($core->userHaveRole('COURSE02')){
+            array_push($courses_types, 'COURSE02');
+        }
+        if($core->userHaveRole('COURSE03')){
+            array_push($courses_types, 'COURSE03');
+        }
+        if($core->userHaveRole('COURSE04')){
+            array_push($courses_types, 'COURSE04');
+        }
         $rows = $core->dbFetch('courses', null, 'ORDER BY created_at DESC', true, true);
         foreach($rows as $r){
-            if($core->chkFilterLimits()){
+            if($core->chkFilterLimits(in_array($core->aes($r['type'], 1), $courses_types))){
                 echo "<tr>";
                     echo "<td>".$core->aes($r['name'], 1)."</td>";
                     $t = $core->aes($r['type'], 1);

@@ -34,26 +34,34 @@
                                 if($lecturer_id == null){
                                     echo "<option value='' selected>".$core->txt('0068')."</option>"; 
                                 }
-                                echo "<option value='COURSE01'";
-                                if($type == 'COURSE01'){
-                                    echo "selected";
+                                if($core->userHaveRole('COURSE01')){
+                                    echo "<option value='COURSE01'";
+                                    if($type == 'COURSE01'){
+                                        echo "selected";
+                                    }
+                                    echo ">".$core->txt("0288")."</option>";
                                 }
-                                echo ">".$core->txt("0288")."</option>";
-                                echo "<option value='COURSE02'";
-                                if($type == 'COURSE02'){
-                                    echo "selected";
+                                if($core->userHaveRole('COURSE02')){
+                                    echo "<option value='COURSE02'";
+                                    if($type == 'COURSE02'){
+                                        echo "selected";
+                                    }
+                                    echo ">".$core->txt("0289")."</option>";
                                 }
-                                echo ">".$core->txt("0289")."</option>";
-                                echo "<option value='COURSE03'";
-                                if($type == 'COURSE03'){
-                                    echo "selected";
+                                if($core->userHaveRole('COURSE03')){
+                                    echo "<option value='COURSE03'";
+                                    if($type == 'COURSE03'){
+                                        echo "selected";
+                                    }
+                                    echo ">".$core->txt("0290")."</option>";
                                 }
-                                echo ">".$core->txt("0290")."</option>";
-                                echo "<option value='COURSE04'";
-                                if($type == 'COURSE04'){
-                                    echo "selected";
+                                if($core->userHaveRole('COURSE04')){
+                                    echo "<option value='COURSE04'";
+                                    if($type == 'COURSE04'){
+                                        echo "selected";
+                                    }
+                                    echo ">".$core->txt("0291")."</option>";
                                 }
-                                echo ">".$core->txt("0291")."</option>";
                                 ?>
                             </select>
                         </div>
@@ -97,7 +105,7 @@
                         </div>
                         <div class="form-group">
                             <label for="rewards"><?php echo $core->txt('0296'); ?> *</label>
-                            <input name="rewards" id="rewards" value="<?php echo $rewards; ?>" class="form-control form-control-sm" type="number">
+                            <input name="rewards" id="rewards" value="<?php echo $rewards; ?>" class="form-control form-control-sm" type="text">
                         </div>
                         <div class="form-group">
                             <label for="details"><?php echo $core->txt('0053'); ?></label>
