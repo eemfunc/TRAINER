@@ -462,8 +462,8 @@ class CoreFunc{
         if(V_PROJECT_STARTING_DATE == date('Y'))
             $output.= date('Y');
         else
-            $output.= V_PROJECT_STARTING_DATE.'&nbsp;-&nbsp;'.date('Y').'&nbsp;';
-        $output.= 'by&nbsp;'.V_COMPANY.'&nbsp;'.V_COPYRIGHT_TXT;
+            $output.= V_PROJECT_STARTING_DATE.'&nbsp;-&nbsp;'.date('Y');
+        $output.= '&nbsp;by&nbsp;'.V_COMPANY.'&nbsp;'.V_COPYRIGHT_TXT;
         return $output;
     }
 

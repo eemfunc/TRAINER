@@ -5,8 +5,20 @@
     }elseif(!$core->dbNumRows('courses', array('id' => $_GET['id']))){
         $core->err(404);
     }
-    echo $theme->getHeader();
+    echo $theme->getHeader('select2');
 ?>
+
+    <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6 grid-margin stretch-card">
+            <div class="card">
+                <div class="col-lg-12" style="text-align: center;padding-top:7px;">
+                    <h4 class="hb title-size"><?php echo $core->aes($core->dbFetch('courses', array('id' => $_GET['id']))[0]['name'], 1); ?></h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
 
     <div class="row">
         <div class="col-lg-3"></div>
@@ -14,91 +26,15 @@
               <div class="card">
                 <div class="card-body">
                     <h4 class="hb title-size center"><?php echo $core->txt('0299'); ?><br><br></h4>
-                    <form class="forms-sample" method="post" action="<?php echo V_URLP.'registrants-add-now'; ?>">
+                    <form class="forms-sample" method="post" action="<?php echo V_URLP.'registrants-add-now&id='.$_GET['id']; ?>">
                         <div class="form-group">
-                            <label for="name"><?php echo $core->txt('0057'); ?> *</label>
-                            <input name="name" id="name" value="<?php echo $name; ?>" class="form-control form-control-sm" type="text">
-                        </div>
-                        <div class="form-group">
-                            <label for="type"><?php echo $core->txt('0284'); ?> *</label>
-                            <select name="type" id="type" class="form-control">
-                                <?php
-                                if($lecturer_id == null){
-                                    echo "<option value='' selected>".$core->txt('0068')."</option>"; 
-                                }
-                                echo "<option value='COURSE01'";
-                                if($type == 'COURSE01'){
-                                    echo "selected";
-                                }
-                                echo ">".$core->txt("0288")."</option>";
-                                echo "<option value='COURSE02'";
-                                if($type == 'COURSE02'){
-                                    echo "selected";
-                                }
-                                echo ">".$core->txt("0289")."</option>";
-                                echo "<option value='COURSE03'";
-                                if($type == 'COURSE03'){
-                                    echo "selected";
-                                }
-                                echo ">".$core->txt("0290")."</option>";
-                                echo "<option value='COURSE04'";
-                                if($type == 'COURSE04'){
-                                    echo "selected";
-                                }
-                                echo ">".$core->txt("0291")."</option>";
-                                ?>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="lecturer_id"><?php echo $core->txt('0294'); ?> *</label>
-                            <select name="lecturer_id" id="lecturer_id" class="form-control">
-                                <?php
-                                if($lecturer_id == null){
-                                    echo "<option value='' selected>".$core->txt('0068')."</option>"; 
-                                }
-                                $rows = $core->dbFetch('staff', array('type' => $core->aes('LECTURER')), 'ORDER BY created_at ASC');
-                                foreach($rows as $r){
-                                    echo "<option value='".$r['id']."'";
-                                    if($lecturer_id == $r['id']){
-                                        echo "selected";
-                                    }
-                                    echo ">".$core->aes($r['name'], 1)."</option>";
-                                }
-                                ?>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="course_var_id"><?php echo $core->txt('0013'); ?> *</label>
-                            <input name="course_var_id" id="course_var_id" value="<?php echo $course_var_id; ?>" class="form-control form-control-sm" type="text">
-                        </div>
-                        <div class="form-group">
-                            <label for="start_date"><?php echo $core->txt('0286'); ?> *</label>
-                            <input name="start_date" id="start_date" value="<?php echo $start_date; ?>" class="form-control form-control-sm" type="date">
-                        </div>
-                        <div class="form-group">
-                            <label for="end_date"><?php echo $core->txt('0297'); ?> *</label>
-                            <input name="end_date" id="end_date" value="<?php echo $end_date; ?>" class="form-control form-control-sm" type="date">
-                        </div>
-                        <div class="form-group">
-                            <label for="lectures_no"><?php echo $core->txt('0295'); ?> *</label>
-                            <input name="lectures_no" id="lectures_no" value="<?php echo $lectures_no; ?>" class="form-control form-control-sm" type="number">
-                        </div>
-                        <div class="form-group">
-                            <label for="price"><?php echo $core->txt('0051'); ?> *</label>
-                            <input name="price" id="price" value="<?php echo $price; ?>" class="form-control form-control-sm" type="number">
-                        </div>
-                        <div class="form-group">
-                            <label for="rewards"><?php echo $core->txt('0296'); ?> *</label>
-                            <input name="rewards" id="rewards" value="<?php echo $rewards; ?>" class="form-control form-control-sm" type="number">
-                        </div>
-                        <div class="form-group">
-                            <label for="details"><?php echo $core->txt('0053'); ?></label>
-                            <input name="details" id="details" value="<?php echo $details; ?>" class="form-control form-control-sm" type="text">
+                            <label for="student"><?php echo $core->txt('0306'); ?> *</label>
+                            <select name="student" id="student" class="form-control js-example-rtl-2"></select>
                         </div>
                         
                         <br>
                         <button type="submit" class="btn btn-primary"><?php echo $core->txt('0023'); ?></button>
-                        <a href="javascript:void(0);" onclick="doAlr('<?php echo V_URLP.'registrants'; ?>', '<?php echo $core->txt('0030'); ?>')"><button type="button" class="btn btn-secondary btn-md mr-2"><?php echo $core->txt('0064'); ?></button></a>
+                        <a href="javascript:void(0);" onclick="doAlr('<?php echo V_URLP.'registrants&id='.$_GET['id']; ?>', '<?php echo $core->txt('0030'); ?>')"><button type="button" class="btn btn-secondary btn-md mr-2"><?php echo $core->txt('0064'); ?></button></a>
                     </form>
                 </div>
             </div>
@@ -107,3 +43,17 @@
     </div>
 
 <?php echo $theme->getFooter(); ?>
+
+<script type="text/javascript">
+    (function ($) {
+        $('.js-example-rtl-2').select2({
+            placeholder: "<?php echo $core->txt('0068'); ?>",language:{errorLoading:function(){return"<?php echo $core->txt('0069'); ?>";},inputTooLong:function(e){var t=e.input.length-e.maximum;return"<?php echo $core->txt('0070'); ?>"+t+"<?php echo $core->txt('0071'); ?>";},inputTooShort:function(e){var t=e.minimum-e.input.length;return"<?php echo $core->txt('0072'); ?>"+t+"<?php echo $core->txt('0076'); ?>";},loadingMore:function(){return"<?php echo $core->txt('0073'); ?>";},maximumSelected:function(e){return"<?php echo $core->txt('0074'); ?>"+e.maximum+"<?php echo $core->txt('0075'); ?>";},noResults:function(){return"<?php echo $core->txt('0077'); ?>";},searching:function(){return"<?php echo $core->txt('0078'); ?>";}},dir: '<?php echo V_SELECT2_DIR; ?>',minimumInputLength: <?php echo V_SELECT2_MINIMUM_INPUT_LENGTH; ?>,
+            
+            ajax: {url: "<?php echo V_MAIN_FOLDER_PATH; ?>",dataType: "json",delay: 250,data: function (params) {return {
+                <?php echo V_PROG_QUERY; ?>: 'registrants-search-students',
+                <?php echo V_SEARCH_QUERY; ?>: params.term,
+                <?php echo V_PAGE_QUERY; ?>: params.page
+            };},processResults: function (data, params) {params.page = params.page || 1;return {results: data.matches,pagination: {more: (params.page * <?php echo V_ROWS_PER_PAGE_SELECT2; ?>) < data.total_count}};},cache: true}});
+        
+    })(jQuery);
+</script>

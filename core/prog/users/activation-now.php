@@ -15,5 +15,4 @@
         else 
             $core->err(V_URLP.'users', false);
     }
-
 ?>

@@ -46,7 +46,7 @@
                                   <th><?php echo $core->txt('0057'); ?></th>
                                   <th><?php echo $core->txt('0269'); ?></th>
                                   <th><?php echo $core->txt('0040'); ?></th>
-                                  <th><?php echo $core->txt('0175'); ?></th>
+                                  <th><?php echo $core->txt('0308'); ?></th>
                                   <th><?php echo $core->txt('0300'); ?></th>
                                   <?php if($core->userHaveRole('REGISTRANTS-EDIT')){ ?>
                                   <th><?php echo $core->txt('0019'); ?></th>
@@ -65,7 +65,7 @@
                     echo "<td>".$core->aes($reg_data['job_title'], 1)."</td>";
                     echo "<td>".$core->aes($reg_data['mobile'], 1)."</td>";
                     echo "<td>";
-                        if($core->aes($r['payment'], 1) != 'PAID'){
+                        if($core->aes($r['payment'], 1) == 'PAID'){
                             echo "<div class='badge badge-success badge-pill'>".$core->txt('0301')."</div>";
                         }else{
                             echo "<div class='badge badge-danger badge-pill'>".$core->txt('0302')."</div>";
@@ -77,12 +77,13 @@
                         }elseif($core->aes($r['acceptance'], 1) == 'REJECTED'){
                             echo "<div class='badge badge-danger badge-pill'>".$core->txt('0305')."</div>";
                         }else{
-                            echo "<div class='badge badge-danger badge-pill'>".$core->txt('0304')."</div>";
+                            echo "<div class='badge badge-warning badge-pill'>".$core->txt('0304')."</div>";
                         }
                     echo "</td>";
                     if($core->userHaveRole('REGISTRANTS-EDIT')){
                     echo "<td>";
-                    ?><a href="javascript:void(0);" onclick="doAlr('<?php echo V_URLP.'registrants-delete-now'; ?>&id=<?php echo $r['id']; ?>', '<?php echo $core->txt('0030'); ?>')"><?php echo $core->txt('0026')."</a>";
+                    echo "<a href='".V_URLP."students-view&id=".$r['staff_id']."' target='_blank'>".$core->txt('0011')."</a> - ";
+                    ?><a href="javascript:void(0);" onclick="doAlr('<?php echo V_URLP.'registrants-delete-now&id='.$r['id'].'&course_id='.$_GET['id']; ?>', '<?php echo $core->txt('0030'); ?>')"><?php echo $core->txt('0026')."</a>";
                     echo "</td>";
                     }
                 echo "</tr>";

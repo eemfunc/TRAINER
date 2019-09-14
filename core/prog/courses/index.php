@@ -59,8 +59,9 @@
                     echo "<td>".$txt."</td>";
                     echo "<td>".$core->aes($r['start_date'], 1)."</td>";
                     $num_reg = $core->dbNumRows('registrants', array(
-                        'course_id' => $r['id'], 
-                        'accepted'  => $core->aes('YES')
+                        'course_id'     => $r['id'],
+                        'payment'       => $core->aes('PAID'),
+                        'acceptance'    => $core->aes('ACCEPTED')
                     ));
                     echo "<td>".$num_reg."</td>";
                     if($core->userHaveRole('COURSES-EDIT')){
