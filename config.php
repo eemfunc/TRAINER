@@ -52,7 +52,7 @@ define('V_DB_PASSWORD', '');
 define('V_DB_NAME', 'trainer');
 define('V_SELECT2_DIR', 'rtl');
 define('V_SELECT2_MINIMUM_INPUT_LENGTH', 2);
-define('V_WEB_TITLE', 'Elnukhba Co');
+define('V_WEB_TITLE', 'elnukhba Trainer');
 define('V_PROJECT_STARTING_DATE', 2018);
 define('V_COMPANY', '<a href="mailto:eemfunc@gmail.com">Muhanad I. Jalil</a>');
 define('V_AUTHOR', 'Muhanad I. Jalil');

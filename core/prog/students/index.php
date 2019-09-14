@@ -28,7 +28,7 @@
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                  <th><?php echo $core->txt('0053'); ?></th>
+                                  <th><?php echo $core->txt('0057'); ?></th>
                                   <th><?php echo $core->txt('0269'); ?></th>
                                   <th><?php echo $core->txt('0040'); ?></th>
                                   <?php if($core->userHaveRole('STUDENTS-EDIT')){ ?>

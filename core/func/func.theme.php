@@ -78,12 +78,8 @@ class theme{
             $txt.= "<link rel='stylesheet' href='".V_THEME_FOLDER_PATH."assets/vendors/select2-4.0.6-rc.1/select2.min.css'><link rel='stylesheet' href='".V_THEME_FOLDER_PATH."assets/css/select2.custom.css'>";
         
         $txt.= "</head><body class='sidebar-icon-only'><div class='container-scroller'><nav class='navbar col-lg-12 col-12 p-0 d-flex flex-row'><div class='navbar-menu-wrapper d-flex align-items-stretch justify-content-between'><ul class='navbar-nav mr-lg-2 d-none d-lg-flex'><li class='nav-item nav-toggler-item'><button class='navbar-toggler align-self-center' type='button' data-toggle='minimize'><span class='mdi mdi-menu'></span></button></li></ul><ul class='navbar-nav navbar-nav-right'><li class='nav-item nav-profile dropdown'><a class='nav-link dropdown-toggle' href='#' data-toggle='dropdown' id='profileDropdown'><span class='nav-profile-name'>".$core->userData('name')."</span></a><div class='dropdown-menu dropdown-menu-right navbar-dropdown' aria-labelledby='profileDropdown'><a class='dropdown-item' href='".V_URLP."dashboard'><i class='mdi mdi-view-dashboard text-primary'></i>".$core->txt('0236')."</a><a class='dropdown-item' href='".V_URLP."sign-out'><i class='mdi mdi-logout text-primary'></i>".$core->txt('0104')."</a></div></li></ul></div></nav><div class='container-fluid page-body-wrapper'><nav class='sidebar sidebar-offcanvas' id='sidebar'><ul class='nav'><li class='nav-item'><a class='nav-link' href='".V_URLP."dashboard'><i class='mdi mdi-view-dashboard menu-icon'></i><span class='menu-title'>".$core->txt('0236')."</span></a></li>";
-        if($core->userHaveRole('INVOICES-EDIT')){
-        $txt.= "<li class='nav-item'><a class='nav-link' href='".V_URLP."invoices-add' target='_blank'><i class='mdi mdi-file-document-box-multiple menu-icon'></i><span class='menu-title'>".$core->txt('0190')."</span></a></li>";
-        }
-        if($core->userHaveRole('CUSTOMERS-EDIT')){
-        $txt.= "<li class='nav-item'><a class='nav-link' href='".V_URLP."customers-add' target='_blank'><i class='mdi mdi-account-card-details menu-icon'></i><span class='menu-title'>".$core->txt('0256')."</span></a></li>";
-        }
+
+        $txt.= "<li class='nav-item'><a class='nav-link' href='http://elnukhba.iq' target='_blank'><i class='mdi mdi-account-card-details menu-icon'></i><span class='menu-title'>".$core->txt('0285')."</span></a></li>";
         
         $txt.= "</ul></nav><div class='main-panel'><div class='content-wrapper'><div id='preloader'><div class='canvas'><div class='spinner'></div></div></div>";
         

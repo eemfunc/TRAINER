@@ -1,10 +1,10 @@
 <?php
-    $core->userChkRole('STUDENTS-EDIT');
+    $core->userChkRole('REGISTRANTS-EDIT');
     if(!$core->chk_GET('id'))
         $core->err(404);
-    elseif(!$core->dbNumRows('staff', array('id' => $_GET['id'])))
+    elseif(!$core->dbNumRows('registrants', array('id' => $_GET['id'])))
         $core->err(404);
-    elseif($core->dbD('staff', array('id' => $_GET['id']))){
+    elseif($core->dbD('registrants', array('id' => $_GET['id']))){
         $status = true;
     }else{
         $status = false;

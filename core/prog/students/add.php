@@ -44,11 +44,19 @@
                         </div>
                         <div class="form-group">
                             <label for="gender"><?php echo $core->txt('0273'); ?></label>
-                            <input name="gender" id="gender" value="<?php echo $gender; ?>" class="form-control form-control-sm" type="text">
+                            <select name="gender" id="gender" class="form-control form-control-sm">
+                                <?php if($gender != "male" && $gender != "female")echo "<option value='' selected></option>"; ?>
+                                <option value="male"<?php if($gender == "male")echo "selected"; ?>><?php echo $core->txt('0278'); ?></option>
+                                <option value="female"<?php if($gender == "female")echo "selected"; ?>><?php echo $core->txt('0279'); ?></option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="mobile"><?php echo $core->txt('0040'); ?> *</label>
                             <input name="mobile" id="mobile" value="<?php echo $mobile; ?>" class="form-control form-control-sm" type="text">
+                        </div>
+                        <div class="form-group">
+                            <label for="email"><?php echo $core->txt('0016'); ?></label>
+                            <input name="email" id="email" value="<?php echo $email; ?>" class="form-control form-control-sm" type="text">
                         </div>
                         <div class="form-group">
                             <label for="organization"><?php echo $core->txt('0274'); ?></label>
@@ -69,10 +77,6 @@
                         <div class="form-group">
                             <label for="details"><?php echo $core->txt('0053'); ?></label>
                             <input name="details" id="details" value="<?php echo $details; ?>" class="form-control form-control-sm" type="text">
-                        </div>
-                        <div class="form-group">
-                            <label for="email"><?php echo $core->txt('0016'); ?></label>
-                            <input name="email" id="email" value="<?php echo $email; ?>" class="form-control form-control-sm" type="text">
                         </div>
                         <div class="form-group">
                             <label for="birthdate"><?php echo $core->txt('0277'); ?></label>
